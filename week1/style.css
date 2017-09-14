@@ -1,0 +1,22 @@
+h1{
+	text-align: left;
+}
+
+p{
+	font-weight: normal;
+	text-align: left;
+}
+
+table.main, tr.main, th.main{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.thumbnail{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+table.car{
+	margin-top: 10px;
+}
