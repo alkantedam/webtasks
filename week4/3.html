@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<style>
+
+		nav{
+      width: 100%;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      background-color: black;
+      font-size: 16pt;
+      padding: 0 60px;
+    }
+
+    nav a{
+      text-align: center;
+      color:white;
+      text-decoration: none;
+      width: 100%;
+      border: 1px solid red;
+    }
+
+    section{
+
+    margin: auto;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  section .card{
+    position: relative;
+    flex-grow: 1;
+    width: 25%;
+    margin: 15px;
+    border: 1px solid blue;
+    border-radius: 10px;
+    height: 40%;
+    text-align: center;
+    z-index: -1;
+  }
+  .card img{
+    width: 95%;
+    position: relative;
+    z-index: -1;
+  }
+
+  .card .title{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: blue;
+    color: white;
+    padding: 3px;
+  }
+  .card .price{
+    padding-bottom: 5px;
+  }
+
+  .card a{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .overlay{
+    top: 25%;
+    left: 30%;
+    background-color: white;
+    position: absolute;
+    margin: auto;
+    width: 40%;
+    height: 20%;
+    border-radius: 8px;
+    border: 3px solid red;
+    z-index: 10;
+  }
+  .overlay h1{
+    text-align: center;
+  }
+  .overlay p{
+    margin-left: 20px; 
+  }
+
+
+	</style>
+  </head>
+
+  <body>
+    <div class="overlay">
+      <div class="alert">
+        <h1>Welcome to Wheels.kz</h1>
+        <p>If you have any questions, please contact us by no: 87017023535</p>
+        <p>The best cars with the best prices are present on our website and application</p>
+      </div>
+    </div>
+    <header>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Prices</a>
+        <a href="#">Contacts</a>
+        <a href="#">Opportunities</a>
+      </nav>
+    </header>
+    <div class = "back">
+    </div>
+    <section>
+      <div class="card first">
+        <img src="http://via.placeholder.com/150x150"/>
+        <div class="price">10.000 $</div>
+        <div class="title">BMW X6</div>
+        <a href="#"><img width="30px" class="icon" src="https://image.flaticon.com/icons/png/512/2/2772.png"/></a>
+      </div>
+      
+      <div class="card">
+        <img src="http://via.placeholder.com/150x150"/>
+        <div class="price">10.000 $</div>
+        <div class="title">Mercedes C100</div>
+        <a href="#"><img width="30px" class="icon" src="https://image.flaticon.com/icons/png/512/2/2772.png"/></a>
+      </div>
+      
+      
+      <div class="card">
+        <img src="http://via.placeholder.com/150x150"/>
+        <div class="price">10.000 $</div>
+        <div class="title">BMW X5</div>
+        <a href="#"><img width="30px" class="icon" src="https://image.flaticon.com/icons/png/512/2/2772.png"/></a>
+      </div>
+      
+      <div class="card">
+        <img src="http://via.placeholder.com/150x150"/>
+        <div class="price">10.000 $</div>
+        <div class="title">Mitsibushi Outlander</div>
+        <a href="#"><img width="30px" class="icon" src="https://image.flaticon.com/icons/png/512/2/2772.png"/></a>
+      </div>
+      
+      <div class="card">
+        <img src="http://via.placeholder.com/150x150"/>
+        <div class="price">10.000 $</div>
+        <div class="title">Audi A8</div>
+        <a href="#"><img width="30px" class="icon" src="https://image.flaticon.com/icons/png/512/2/2772.png"/></a>
+      </div>
+      
+      <div class="card">
+        <img src="http://via.placeholder.com/150x150"/>
+        <div class="price">10.000 $</div>
+        <div class="title">BMW X6</div>
+        <a href="#"><img width="30px" class="icon" src="https://image.flaticon.com/icons/png/512/2/2772.png"/></a>
+      </div>
+    </section>
+  </body>
+
+</html>
