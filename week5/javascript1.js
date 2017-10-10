@@ -12,7 +12,6 @@ function onCLick() {
 	const result = document.querySelector("#result");
 
 
-
 	let det = parseInt(first.value)*(parseInt(fifth.value)*parseInt(nineth.value) - parseInt(sixth.value)*parseInt(eighth.value)) - 
 				parseInt(second.value)*(parseInt(fourth.value)*parseInt(nineth.value) - parseInt(sixth.value)*parseInt(seventh.value)) +
 				parseInt(third.value)*(parseInt(fourth.value)*parseInt(eighth.value) - parseInt(fifth.value)*parseInt(seventh.value));
@@ -20,5 +19,5 @@ function onCLick() {
 	result.value = det;	
 }
 
-const button = document.querySelector('button');
+const button = document.querySelector('#addStudent');
 button.addEventListener('click', onCLick);
