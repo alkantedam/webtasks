@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <style>
+      #cards .card{
+        border:1px solid red;
+        display:flex;
+        width:300px;
+      }
+      #cards .card .title{
+        flex-grow: 1;
+      }
+      #cards .card .price{
+        font-weight: bold;
+        padding-right: 20px;
+      }
+      #loading{
+        display: none;
+      }
+      #cards{
+        width:300px;
+        height:200px;
+        border: 1px solid blue;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <button id = 'load'>Load</button>
+    <br>
+    <button id = 'maker-sort'>Sort by maker</button>
+    <button id = 'price-sort'>Sort by price</button>
+    <div id="cards">
+      <img width="300px" height="200px" id="loading" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
+    </div>
+
+
+    <script defer>
+
+      const SORT_BY_MAKER = function(a,b){
+        const titleA = a.name.toUpperCase();
+        const titleB = b.name.toUpperCase();
+        if(titleA < titleB) {return -1;}
+        if(titleA > titleB) {return 1;}
+        return 0;
+      }
+
+      let save;
+      function onStreamProccessed(data){
+        save = data;
+          for(let i = 0; i < data.length; i++){
+            let container = document.createElement('div');
+            container.setAttribute('class', 'card');
+            let car = document.createElement('div');
+            car.setAttribute('class', 'title');
+            car.innerHTML = (data[i].maker + " " +data[i].model);
+            container.appendChild(car);
+            let price = document.createElement('div');
+            price.setAttribute('class', 'price');
+            price.innerHTML = (data[i].price);
+            container.appendChild(price);
+            document.getElementById("cards").appendChild(container);
+          }
+      }
+
+      function onSuccess(response){
+        return response.json().then(onStreamProccessed);
+      }
+
+      function onError(error){
+        console.log("Error: " + error);
+      }
+
+      function onClick(){
+        document.getElementById('loading').style.display = 'inline-block';
+        document.getElementById('load').innerHTML="Loading..."
+
+           
+        setTimeout(function(){
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('load').innerHTML="Items are loaded"
+          fetch("http://demo4296963.mockable.io/listCars").then(onSuccess,onError);
+          }, 2000);
+    }
+
+    function  maker_sort(event){
+      clean();
+      save.sort( (a,b) => a.maker.localeCompare(b.maker));
+      onStreamProccessed(save);
+      }
+
+    function price_sort(event){
+      clean();
+      save.sort( (a,b) => a.price - b.price);
+      onStreamProccessed(save);
+    }
+
+    function clean(){
+      document.getElementById('cards').innerHTML = "";
+    }
+
+      document.querySelector("#maker-sort").addEventListener('click', maker_sort);
+      document.querySelector("#price-sort").addEventListener('click', price_sort);
+	    document.querySelector("#load").addEventListener('click', onClick);
+
+    </script>
+  </body>
+
+</html>

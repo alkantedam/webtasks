@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <style>
+      #cards .card{
+        border:1px solid red;
+        display:flex;
+        width:300px;
+      }
+      #cards .card .title{
+        flex-grow: 1;
+      }
+      #cards .card .price{
+        font-weight: bold;
+        padding-right: 20px;
+      }
+      #loading{
+        display: none;
+      }
+      #cards{
+        width:300px;
+        height:200px;
+        border: 1px solid blue;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <button id = 'load'>Load</button>
+    <div id="cards">
+      <img width="300px" height="200px" id="loading" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
+    </div>
+
+
+    <script defer>
+
+
+      function onStreamProccessed(data){
+          for(let i = 0; i < data.length; i++){
+            let container = document.createElement('div');
+            container.setAttribute('class', 'card');
+            let car = document.createElement('div');
+            car.setAttribute('class', 'title');
+            car.innerHTML = (data[i].maker + " " +data[i].model);
+            container.appendChild(car);
+            let price = document.createElement('div');
+            price.setAttribute('class', 'price');
+            price.innerHTML = (data[i].price);
+            container.appendChild(price);
+
+            document.getElementById("cards").appendChild(container);
+          }
+
+          
+      }
+
+      function onSuccess(response){
+        return response.json().then(onStreamProccessed);
+      }
+
+      function onError(error){
+        console.log("Error: " + error);
+      }
+
+      function onClick(){
+        document.getElementById('loading').style.display = 'inline-block';
+        document.getElementById('load').innerHTML="Loading..."
+      
+           
+        setTimeout(function(){
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('load').innerHTML="Items are loaded"
+          fetch("http://demo4296963.mockable.io/listCars").then(onSuccess,onError);
+          }, 2000);
+    }
+      
+
+	    document.querySelector("#load").addEventListener('click', onClick);
+    </script>
+  </body>
+
+</html>

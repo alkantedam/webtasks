@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <style>
+    
+		#cars{
+		  display:flex;
+		  flex-wrap:wrap;
+
+		}
+		#card1{
+		  position:relative;
+		 display:flex;
+		  width:100px;
+		  margin:5px;
+		}
+		#card2{
+		  position:relative;
+		 display:flex;
+		  width:100px;
+		  margin:5px;
+		}
+		#card3{
+		  position:relative;
+		 display:flex;
+		  width:100px;
+		  margin:5px;
+		}
+		#basket1{
+		  background-color:white;
+		  position:absolute;
+		  right:5px;
+		  top:5px;
+		  z-index:9;
+		}
+		#basket2{
+		  background-color:white;
+		  position:absolute;
+		  right:5px;
+		  top:5px;
+		  z-index:9;
+		}
+		#basket3{
+		  background-color:white;
+		  position:absolute;
+		  right:5px;
+		  top:5px;
+		  z-index:9;
+		}
+		
+		#insideBasket{
+		  border:1px solid red;
+		  text-align:center;
+		}
+	</style>
+    <script src="script3.js" defer></script>
+  </head>
+
+  <body>
+    <div id="insideBasket"><span id="items">0</span> items,  total: <span id="sum">0</span>$</div>
+    <div id="cars">
+    	<div id="card1"><div id="basket1" ></div></div>
+    	<div id="card2"><div id="basket2" ></div></div>
+    	<div id="card3"><div id="basket3" ></div></div>
+
+      
+    </div>
+  </body>
+
+</html>
