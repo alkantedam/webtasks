@@ -38,7 +38,7 @@ class App{
 		const albumContainer = document.querySelector("#album-container");
 		albumContainer.innerHTML = '';
 		for(const info of this.albumInfo){
-			const album = new Album(albumContainer, info.url);
+			const album = new Album(albumContainer, info.url, info.name, info.year);
 		}
 	}
 
@@ -51,7 +51,7 @@ class App{
 		const albums = json.albums;
 		const albumContainer = document.querySelector("#album-container");
 		for(const info of this.albumInfo){
-			const album = new Album(albumContainer, info.url);
+			const album = new Album(albumContainer, info.url, info.name, info.year);
 		}
 	}
 
@@ -75,10 +75,28 @@ class SortButton{
 }
 
 class Album{
-	constructor(containerElement, imageUrl){
-		const image = new Image();
+	constructor(containerElement, imageUrl, title, year){
+		
+	
+		let element = document.createElement("div");
+		element.setAttribute("class", "element");
+
+		let image = document.createElement('img');
 		image.src = imageUrl;
-		containerElement.append(image);
+
+		let name = document.createElement("div");
+		name.setAttribute("class", "title");
+		name.innerHTML = title;
+
+		let price = document.createElement("div");
+		price.setAttribute("class", "year");
+		price.innerHTML = year;
+
+
+		element.append(image);
+		element.append(name);
+		element.append(price);
+		containerElement.append(element);
 	}
 }
 

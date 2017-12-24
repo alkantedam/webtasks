@@ -56,36 +56,87 @@ body{
 	margin: 0;
 }
 
-.intro 
-{	width: 100vw;
-	height: 70vh;
-	display: flex;
+hr{
+	colot: #ccc;
+	width: 1300px;
+	text-align: center;
+}
+.slideshow-container{
+	max-width: 1000px;
 	position: relative;
-	background-color: #E8E7E3;
-	margin: 0;
+	margin: auto;
 }
 
-.intro p{
-	align-items: center;
-	justify-content: center;
-	text-align: right;
-	width: 50%;
-	height: 100%;
+.prev, .next{
+	cursor: pointer;
 	position: absolute;
-	right: 60px;
-	top: 20%;
-	font-family: 'Roboto', sans-serif;
-	font-size: 14pt;
-	font-weight: 100;
+	top: 50%;
+	width: auto;
+	margin-top: -22px;
+	padding: 16px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0; 
 }
 
-.intro img{
-	position: absolute;
-	max-width: 45%;
-	height: 100%;
-	max-height: 100%;
-	transform: scale(-1, 1)
+.next{
+	right: 0;
+	border-radius: 3px 0 0 3px;
 }
+
+.prev:hover, .next:hover{
+	background-color: rgba(0,0,0,0,0.8);
+
+}
+
+.text{
+	color: #f2f2f2;
+	font-size: 14px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+}
+
+.dot{
+
+	cursor: pointer;
+	width: 13px;
+	height: 13px;
+	margin: 1% 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+
+.active, dot:hover{
+	background-color: #22490c;
+
+}
+
+
+.fade{
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade{
+	from{opacity:.4}
+	to {opacity: 1}
+}
+@keyframes fade{
+	from{opacity:.4}
+	to {opacity: 1}
+}
+
+
+
+
 
 section{
 	width: 100vw;
@@ -143,9 +194,35 @@ h1{
 	font-weight: 300;
 	color: grey;
 	margin-top: 70px;
-	margin-bottom: 90px;
 }
 
+.control{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin: 2%;
+}
+
+.control button{
+	font-family: 'Roboto', sans-serif;
+	font-size: 1em;
+	background-color: white;
+	color: #ccc;
+	font-weight: bold;
+	border: none;
+	padding: 5px 15px;
+	margin: 0 20px;
+	border-radius: 10px;
+
+}
+
+.control button:hover{
+	background-color: #ccc;
+	color: white;
+	border-radius: 15px;
+
+}
 
 
 section .element{
@@ -160,13 +237,15 @@ section .element{
 	font-weight: 300;
 }
 
-.element.title{
-	font-size: 12pt;
+.element .title{
+	font-size: 14pt;
 	color: #003300;
 }
-.element.price{
+.element .price{
+	margin-top: 2%;
 	font-size: 10pt;
 	color: #ccc;
+	font-weight: bold;
 }
 .element a{
 	text-decoration: none;
@@ -238,7 +317,8 @@ section .list_elements{
 }
 
 section .list_elements .list_element{
-	display: inline-block;
+	display: flex;
+	flex-direction: row;
 	padding: 30px;
 	margin-top: 20px;
 	margin-left: 60px;
@@ -256,6 +336,7 @@ section .list_elements .list_element img{
 
 section .list_elements .list_element .text_elements{
 	display: inline;
+	margin-left: 5%; 
 	float: right;
 	width: 80%;
 	max-width: 80%;
@@ -279,9 +360,11 @@ section .list_elements .list_element .text_elements{
 	color: #ccc;
 	float: right;
 }
-.list_element p{
+.list_element .description{
+	margin-top: 2%;
 	width: 70%;
-	font-size: 9pt;
+	font-size: 0.4em;
+	font-family: 'Roboto', sans-serif;
 
 }
 
@@ -344,9 +427,7 @@ footer a{
       }
 
 @media        screen and (min-width: 350px) {
-	.intro p{
-		font-size: 1pt;
-	}
+	
 
 	.list_element .text_elemets{
 		font-size: 1em;
@@ -356,6 +437,16 @@ footer a{
 
 }
 
+@media screen and (max-width: 1000px) {
+
+	section .elements{
+		display:flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+}
 
 
 

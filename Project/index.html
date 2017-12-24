@@ -2,8 +2,10 @@
 <html>
 <head>
 	<title></title>
+	  <meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400" rel="stylesheet">
+	<script type="text/javascript" src = "script_index.js" defer></script>
 </head>
 <body>
 
@@ -24,16 +26,54 @@
 
 	</div>
 </header>
+<br>
+<hr>
+<br>
 
-	<div class = "intro">
+	<div class = "slideshow-container">
 
-		<p>Organic Shop - магазин, в котором вы смоджете украсить ваш уголок, дом, квартиру любым видом растений, заказать семена для своего сада и просто насладиться примерами дизайна и связаться с нашим дизайнером интерьеров, флористами и просто консультантами, которые смогут привнести в ваш дом капельку утонченности, эстетики и уюта, а это все, что нужно для хорошей атмосферы в вашем гнездышке </p>
+		<div class = "mySlides fade">
 
-		<img src="1.jpeg">
+			<img src = "1.jpeg" style ="width: 100%;">
+			
+		</div>
+
+		<div class = "mySlides fade">
+
+			<img src = "2.jpeg" style ="width: 100%;">
+			
+		</div>
+
+		<div class = "mySlides fade">
+
+			<img src = "3.jpg" style ="width: 100%;">
+			
+		</div>
+
+		<a class = "prev" onclick="plusSlides(-1)">&#10094</a>
+		<a class = "next" onclick="plusSlides(1)">&#10095</a>
+
+		<div style = "text-align: center;">
+			
+			<span class = "dot" onclick = "currentSlide(1)"></span>
+			<span class = "dot" onclick = "currentSlide(2)"></span>
+			<span class = "dot" onclick = "currentSlide(3)"></span>
+		</div>
+
+	<!-- 	<p>Organic Shop - магазин, в котором вы сможете украсить ваш уголок, дом, квартиру любым видом растений, заказать семена для своего сада и просто насладиться примерами дизайна и связаться с нашим дизайнером интерьеров, флористами и просто консультантами, которые смогут привнести в ваш дом капельку утонченности, эстетики и уюта, а это все, что нужно для хорошей атмосферы в вашем гнездышке </p>
+
+		<img src="1.jpeg"> -->
 		
 	</div>
 
 	<h1>Каталог товаров</h1>
+
+	<div class = "control">
+		<button id = "alpha">По названию</button>
+		<button id = "desc">По цене</button>
+	</div>
+
+
 
 	<section>
 
@@ -44,38 +84,8 @@
 			<a href="">Портфолио флористов</a>
 		</div>
 
-		<div class="elements">
-			<div class = "element">
-				<a href=""><img src="01.jpg"></a>
-				<div class="title"> Суккулент необычный</div>
-				<div class="price">20$</div>
-			</div>	
-			<div class = "element">
-				<a href=""><img src="02.jpg"></a>
-				<div class="title"> Суккулент необычный</div>
-				<div class="price">20$</div>
-			</div>	
-			<div class = "element">
-				<a href=""><img src="03.jpg"></a>
-				<div class="title"> Суккулент необычный</div>
-				<div class="price">20$</div>
-			</div>	
-
-			<div class = "element">
-				<a href=""><img src="04.jpg"></a>
-				<div class="title"> Суккулент необычный</div>
-				<div class="price">20$</div>
-			</div>	
-			<div class = "element">
-				<a href=""><img src="05.jpg"></a>
-				<div class="title"> Суккулент необычный</div>
-				<div class="price">20$</div>
-			</div>	
-			<div class = "element">
-				<a href="element.html"><img src="06.png"></a>
-				<div class="title"> Суккулент необычный</div>
-				<div class="price">20$</div>
-			</div>
+		<div class="elements" id = 'container-elements'>
+			
 		</div>
 
 		<div class="pages">

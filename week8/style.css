@@ -13,4 +13,14 @@ img {
 
 #album-container {
   padding: 20px 0;
+  	width: 60%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+#album-container .element{
+	display: flex;
+	flex-direction: column;
 }

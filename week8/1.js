@@ -13,6 +13,8 @@ const SORT_ALPHA_TITLE = function(a, b) {
   return 0;
 };
 
+
+
 class App {
   constructor() {
     this._onJsonReady = this._onJsonReady.bind(this);
